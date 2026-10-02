@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1000 დღე...</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* ფოტო ფონად და მსუბუქი დაბურვა ტექსტის უკეთ გამოსაჩენად */
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), 
+                        url('photo.JPEG') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px 10px;
+            /* შავი ფონი წაშლილია, დარჩა მხოლოდ გამჭვირვალე ეფექტი */
+            background: transparent;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            font-weight: 500;
+            letter-spacing: 1px;
+            /* ტექსტის ჩრდილი, რომ ფოტოზე მკაფიოდ გამოჩნდეს */
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ffffff;
+            white-space: pre-wrap;
+            font-weight: 400;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>1000 დღე...</h1>
+        
+        <p id="text">
+2024 წლის 6 იანვარი... 
+დღე, როდესაც პირველად მითხარი, რომ ვუყვარდი. 
+
+დღეს, 2026 წლის 2 ოქტომბერს, იმ წამიდან ზუსტად 1000 დღე შესრულდა. ათასი დღე — ეს უბრალოდ ციფრები არ არის. ეს არის ათასი სხვადასხვა ემოცია, ფიქრი, მოგონება და წამი, რომელმაც ჩემი ცხოვრება სამუდამოდ შეცვალა.
+
+დრო გადის, ბევრი რამ იცვლება, მაგრამ ზოგიერთი სიტყვა და გრძნობა დროს არ ემორჩილება. 6 იანვარს ნათქვამი ის პირველი სიტყვები დღემდე განსაკუთრებულ ადგილს იკავებს ჩემს მეხსიერებაში. 
+
+მინდოდა, ეს სიმბოლური 1000-ე დღე რაღაც განსაკუთრებულით აღმენიშნა. ეს ჩემი ჩაწერილი სიმღერაა — ჩემი ხმითა და გულით შესრულებული. მასში ის ემოციაა, რაც ამ 1000 დღის განმავლობაში მუდამ ჩემთან იყო. 
+
+მადლობა ყველაფრისთვის, რაც გვქონდა...
+        </p>
+    </div>
+
+    <audio id="myAudio" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        
+        // ავტომატური ჩართვა ეკრანზე პირველივე შეხებისას/სქროლვისას
+        function startAudio() {
+            if (audio.paused) {
+                audio.play();
+            }
+        }
+
+        window.addEventListener('click', startAudio);
+        window.addEventListener('touchstart', startAudio);
+        window.addEventListener('scroll', startAudio, { once: true });
+    </script>
+</body>
+</html>
